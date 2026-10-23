@@ -53,15 +53,15 @@ export const AudioVisualizer: React.FC<AudioVisualizerProps> = ({ stream, isReco
             const x = gap + i * (barWidth + gap);
             const y = (canvas.height - barHeight) / 2;
 
-            // Vibrant gradient per bar
+            // Vibrant Red to Crimson gradient per bar
             const grad = ctx.createLinearGradient(0, y, 0, y + barHeight);
-            grad.addColorStop(0, '#6366f1');
-            grad.addColorStop(0.5, '#a855f7');
-            grad.addColorStop(1, '#ec4899');
+            grad.addColorStop(0, '#ff4d61');
+            grad.addColorStop(0.5, '#ef4444');
+            grad.addColorStop(1, '#991b1b');
 
             ctx.fillStyle = grad;
-            ctx.shadowBlur = 10;
-            ctx.shadowColor = 'rgba(168, 85, 247, 0.4)';
+            ctx.shadowBlur = 12;
+            ctx.shadowColor = 'rgba(239, 68, 68, 0.6)';
 
             // Draw rounded bar
             ctx.beginPath();
@@ -92,7 +92,7 @@ export const AudioVisualizer: React.FC<AudioVisualizerProps> = ({ stream, isReco
           const x = gap + i * (barWidth + gap);
           const y = (canvas.height - barHeight) / 2;
 
-          ctx.fillStyle = 'rgba(99, 102, 241, 0.25)';
+          ctx.fillStyle = 'rgba(239, 68, 68, 0.35)';
           ctx.shadowBlur = 0;
           ctx.beginPath();
           ctx.roundRect(x, y, barWidth, barHeight, 2);

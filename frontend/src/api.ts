@@ -1,7 +1,8 @@
 import type { Transcription, Stats, LanguageAnalysis } from './types';
 
-const API_BASE = 'http://localhost:5000/api';
-const WS_BASE = 'ws://localhost:5000/ws/stream';
+const isDevServer = window.location.port !== '5000';
+const API_BASE = isDevServer ? '/api' : 'http://localhost:5000/api';
+const WS_BASE = `${window.location.protocol === 'https:' ? 'wss:' : 'ws:'}//${window.location.host}/ws/stream`;
 
 export async function fetchTranscriptions(params?: {
   search?: string;
